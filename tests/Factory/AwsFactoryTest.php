@@ -44,7 +44,9 @@ class AwsFactoryTest extends TestCase
 
     private function getMockServiceLocator()
     {
-        $serviceLocator = $this->getMockBuilder(ServiceLocatorInterface::class);
+        $serviceLocator = $this
+            ->getMockBuilder(ServiceLocatorInterface::class)
+            ->getMock();
         $serviceLocator
             ->expects($this->once())
             ->method('get')
