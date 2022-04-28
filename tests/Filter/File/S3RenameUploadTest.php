@@ -47,7 +47,11 @@ class S3RenameUploadTest extends TestCase
 
     public function testThrowExceptionIfNoBucketIsSet()
     {
-        $this->setExpectedException(MissingBucketException::class);
+        if (method_exists($this, 'expectException')) {
+            $this->expectException(MissingBucketException::class);
+        } else {
+            $this->setExpectedException(MissingBucketException::class);
+        }
         $this->filter->filter(['tmp_name' => 'foo', 'name' => 'foo']);
     }
 
