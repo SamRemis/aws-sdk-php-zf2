@@ -55,6 +55,6 @@ class AwsFactoryTest extends TestCase
             ->withAnyParameters()
             ->willReturn([]);
 
-        return $serviceLocator;
+        return $operation;
     }
 }
