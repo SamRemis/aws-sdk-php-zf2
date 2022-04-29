@@ -44,6 +44,7 @@ class AwsFactoryTest extends TestCase
 
     private function getMockServiceLocator()
     {
+        error_reporting(E_ALL ^ E_DEPRECATED);
         $serviceLocator = $this
             ->createMock(ServiceLocatorInterface::class);
         $serviceLocator
